@@ -31,9 +31,11 @@ function task3() {
   ])
     // Функція then викликається, коли проміс вирішено
     // Вона приймає результати промісів і обробляє їх
-    .then((data) => {
-      console.log(data);
-    })
+    .then((results) =>
+      results.forEach((result, index) => {
+        console.log(`Проміс ${index + 1}: ${result.status}`);
+      })
+    )
     // Для кожного результату виводимо статус проміса
     .catch((error) => {
       console.log(error);
